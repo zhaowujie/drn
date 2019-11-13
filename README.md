@@ -1,24 +1,8 @@
-## Overview
+## 总览
+## 这是用于图像分类和分割的代码，包括各种模型以及测试结果
 
 This code provides various models combining dilated convolutions with residual networks. Our models can achieve better performance with less parameters than ResNet on [image classification](#image-classification) and [semantic segmentation](#semantic-image-segmentataion).
 
-If you find this code useful for your publications, please consider citing
-
-```
-@inproceedings{Yu2017,
-    title     = {Dilated Residual Networks},
-    author    = {Fisher Yu and Vladlen Koltun and Thomas Funkhouser},
-    booktitle = {Computer Vision and Pattern Recognition (CVPR)},
-    year      = {2017},
-}
-
-@inproceedings{Yu2016,
-    title     = {Multi-scale context aggregation by dilated convolutions},
-    author    = {Yu, Fisher and Koltun, Vladlen},
-    booktitle = {International Conference on Learning Representations (ICLR)},
-    year      = {2016}
-}
-```
 
 ## Code Highlights
 
@@ -72,19 +56,18 @@ The code is written in Python using [Pytorch](https://github.com/pytorch/pytorch
 
 Go to [this page](https://github.com/facebook/fb.resnet.torch/blob/master/INSTALL.md#download-the-imagenet-dataset) to prepare ImageNet 1K data.
 
-To test a model on ImageNet validation set:
+## 分类测试:
 ```
 python3 classify.py test --arch drn_c_26 -j 4 <imagenet dir> --pretrained
 ```
-
-To train a new model:
+## 分类训练:
 ```
 python3 classify.py train --arch drn_c_26 -j 8 <imagenet dir> --epochs 120
 ```
 
 Besides `drn_c_26`, we also provide `drn_c_42` and `drn_c_58`. They are in DRN-C family as described in [Dilated Residual Networks](https://umich.app.box.com/v/drn). DRN-D models are simplified versions of DRN-C. Their code names are `drn_d_22`, `drn_d_38`, `drn_d_54`, and `drn_d_105`.
 
-## Semantic Image Segmentataion
+## 下面是图像分割
 
 ### Models
 
